@@ -50,7 +50,7 @@ def generate_bars(bar_count, rainbow):
     if rainbow and rainbow != "false" and rainbow != "0":
         css += ".bar-container { animation-duration: 2s; }"
     spectrum = [
-        "68223e",
+        "#68223e",
         "#68223e",
         "#68223e",
         "#68223e",
