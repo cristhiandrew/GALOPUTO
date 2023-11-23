@@ -50,13 +50,13 @@ def generate_bars(bar_count, rainbow):
     if rainbow and rainbow != "false" and rainbow != "0":
         css += ".bar-container { animation-duration: 2s; }"
     spectrum = [
-        "#ff0000",
-        "#ff4000",
-        "#ff8000",
-        "#ffbf00",
-        "#ffff00",
-        "#bfff00",
-        "#80ff00",
+        "68223e",
+        "#68223e",
+        "#68223e",
+        "#68223e",
+        "#68223e",
+        "#68223e",
+        "#68223e",
         "#40ff00",
         "#00ff00",
         "#00ff40",
@@ -75,7 +75,7 @@ def generate_bars(bar_count, rainbow):
     for i in range(bar_count):
         css += f""".bar:nth-child({i + 1}) {{
                 animation-duration: {randint(500, 750)}ms;
-                background: {spectrum[i] if rainbow and rainbow != 'false' and rainbow != '0' else '#24D255'};
+                background: {spectrum[i] if rainbow and rainbow != 'false' and rainbow != '0' else '68223e'};
             }}"""
     return f"{bars}{css}</style>"
 
