@@ -43,7 +43,7 @@ def spotify_request(endpoint):
     return {} if r.status_code == 204 else r.json()
 
 
-def generate_bars(bar_count, rainbow):
+def generate_bars(bar_count, rainbow, theme):
     """Build the HTML/CSS snippets for the EQ bars to be injected"""
     bars = "".join(["<div class='bar'></div>" for _ in range(bar_count)])
     css = "<style>"
@@ -95,6 +95,7 @@ def generate_bars(bar_count, rainbow):
             }}"""
     return f"{bars}{css}</style>"
 
+
 def load_image_base64(url):
     """Get the Base64 encoded image from url"""
     resposne = requests.get(url)
@@ -135,7 +136,7 @@ def make_svg(spin, scan, theme, rainbow):
     return render_template(
         "index.html",
         **{
-            "bars": generate_bars(bar_count, rainbow),
+            "bars": generate_bars(bar_count, rainbow, theme),
             "artist": item["artists"][0]["name"],
             "song": item["name"],
             "image": image,
