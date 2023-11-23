@@ -72,13 +72,28 @@ def generate_bars(bar_count, rainbow):
         "#bf00ff",
         "#ff00ff",
     ]
+    if theme == "blue":
+        color_hexadecimal = "#13d9fc"
+    elif theme == "cherry":
+        color_hexadecimal = "#f98fa2"
+    elif theme == "violet":
+        color_hexadecimal = "#664679"
+    elif theme == "green":
+        color_hexadecimal = "#2eff8f"
+    elif theme == "orange":
+        color_hexadecimal = "#68223e"
+    elif theme == "purple":
+        color_hexadecimal = "#ff00ff"
+    elif theme == "white":
+        color_hexadecimal = "#cfcdcd"
+    else:
+        color_hexadecimal = "#68223e"
     for i in range(bar_count):
         css += f""".bar:nth-child({i + 1}) {{
                 animation-duration: {randint(500, 750)}ms;
-                background: {spectrum[i] if rainbow and rainbow != 'false' and rainbow != '0' else '#68223e'};
+                background: {spectrum[i] if rainbow and rainbow != 'false' and rainbow != '0' else color_hexadecimal};
             }}"""
     return f"{bars}{css}</style>"
-
 
 def load_image_base64(url):
     """Get the Base64 encoded image from url"""
